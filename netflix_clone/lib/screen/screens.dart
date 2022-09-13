@@ -1,0 +1,1 @@
+export 'package:netflix_clone/screen/home_screen.dart';

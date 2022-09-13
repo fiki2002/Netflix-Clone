@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../models/models.dart';
 
-final Content sintelContent = const Content(
+const Content sintelContent = Content(
   name: 'Sintel',
   imageUrl: Assets.sintel,
   titleImageUrl: Assets.sintelTitle,
