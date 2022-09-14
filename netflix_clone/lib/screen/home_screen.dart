@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/data.dart';
 import '../widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -55,12 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: CustomScrollView(
         controller: _scrollController,
-        slivers: [
+        slivers: const [
           SliverToBoxAdapter(
-            child: Container(
-              height: 1000,
-              color: Colors.blue,
-            ),
+            child: ContentHeader(featuredContent: sintelContent,),
           ),
         ],
       ),

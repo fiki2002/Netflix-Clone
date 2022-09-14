@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
   }) : super(key: key);
 
   final double scrollOffset;
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,36 +18,38 @@ class CustomAppBar extends StatelessWidget {
         horizontal: 24,
       ),
       color: Colors.black.withOpacity(
-        (scrollOffset / 350).clamp(0,1).toDouble(),
+        (scrollOffset / 350).clamp(0, 1).toDouble(),
       ),
-      child: Row(
-        children: [
-          Image.asset(
-            Assets.netflixLogo0,
-          ),
-          const SizedBox(
-            width: 12,
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _AppBarButton(
-                  text: 'TV Shows',
-                  onTap: () => debugPrint('TV Shows'),
-                ),
-                _AppBarButton(
-                  text: 'Movies',
-                  onTap: () => debugPrint('Movies'),
-                ),
-                _AppBarButton(
-                  text: 'My Lists',
-                  onTap: () => debugPrint('My Lists'),
-                ),
-              ],
+      child: SafeArea(
+        child: Row(
+          children: [
+            Image.asset(
+              Assets.netflixLogo0,
             ),
-          ),
-        ],
+            const SizedBox(
+              width: 12,
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _AppBarButton(
+                    text: 'TV Shows',
+                    onTap: () => debugPrint('TV Shows'),
+                  ),
+                  _AppBarButton(
+                    text: 'Movies',
+                    onTap: () => debugPrint('Movies'),
+                  ),
+                  _AppBarButton(
+                    text: 'My Lists',
+                    onTap: () => debugPrint('My Lists'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
