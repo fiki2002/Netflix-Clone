@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           debugPrint('cast');
@@ -58,7 +59,18 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: _scrollController,
         slivers: const [
           SliverToBoxAdapter(
-            child: ContentHeader(featuredContent: sintelContent,),
+            child: ContentHeader(
+              featuredContent: sintelContent,
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(top: 20,),
+            sliver: SliverToBoxAdapter(
+              child: Previews(
+                title: 'Previews',
+                contentList: previews,
+              ),
+            ),
           ),
         ],
       ),
