@@ -77,14 +77,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SliverToBoxAdapter(
             child: ContentList(
-              key: PageStorageKey('contentList'),
+                key: PageStorageKey('contentList'),
               title: 'My List',
               contentList: myList,
             ),
           ),
           SliverToBoxAdapter(
             child: ContentList(
-              key: PageStorageKey('netflixOriginals'),
+                key: PageStorageKey('netflixOriginals'),
               title: 'Netflix Originals',
               contentList: originals,
               isOriginals: true,
@@ -96,7 +96,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             sliver: SliverToBoxAdapter(
               child: ContentList(
-                key: PageStorageKey('netflixOriginals'),
+               key: PageStorageKey('netflixOriginals'),
+
                 title: 'Trending',
                 contentList: trending,
               ),
