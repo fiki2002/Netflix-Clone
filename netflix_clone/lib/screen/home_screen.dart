@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ..addListener(
         () {
           setState(() {
-            _scrollOffset = _scrollController.offset;
+            _scrollOffset = _scrollController.offset; 
           });
         },
       );
