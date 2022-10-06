@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../data/data.dart';
+import '../provider/appbar_provider.dart';
 import '../widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,9 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
     _scrollController = ScrollController()
       ..addListener(
         () {
-          setState(() {
-            _scrollOffset = _scrollController.offset; 
-          });
+          // setState(() {
+          //   _scrollOffset = _scrollController.offset;
+          // });
+       Provider.of<AppBarProvider>(context, listen: true).scroll(_scrollController.offset);
+      
         },
       );
     super.initState();
@@ -51,8 +55,12 @@ class _HomeScreenState extends State<HomeScreen> {
           screenSize.width,
           50.0,
         ),
-        child: CustomAppBar(
-          scrollOffset: _scrollOffset,
+        child: Consumer<AppBarProvider>(
+          builder: (context, scroll, child) {
+            return CustomAppBar(
+              scrollOffset: 
+            );
+          }
         ),
       ),
       body: CustomScrollView(
@@ -77,14 +85,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SliverToBoxAdapter(
             child: ContentList(
-                key: PageStorageKey('contentList'),
+              key: PageStorageKey('contentList'),
               title: 'My List',
               contentList: myList,
             ),
           ),
           SliverToBoxAdapter(
             child: ContentList(
-                key: PageStorageKey('netflixOriginals'),
+              key: PageStorageKey('netflixOriginals'),
               title: 'Netflix Originals',
               contentList: originals,
               isOriginals: true,
@@ -96,8 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             sliver: SliverToBoxAdapter(
               child: ContentList(
-               key: PageStorageKey('netflixOriginals'),
-
+                key: PageStorageKey('netflixOriginals'),
                 title: 'Trending',
                 contentList: trending,
               ),
