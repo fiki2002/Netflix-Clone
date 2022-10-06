@@ -20,11 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _scrollController = ScrollController()
       ..addListener(
         () {
-          // setState(() {
-          //   _scrollOffset = _scrollController.offset;
-          // });
        Provider.of<AppBarProvider>(context, listen: true).scroll(_scrollController.offset);
-      
         },
       );
     super.initState();
@@ -56,9 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
           50.0,
         ),
         child: Consumer<AppBarProvider>(
-          builder: (context, scroll, child) {
+          builder: (context, val, child) {
             return CustomAppBar(
-              scrollOffset: 
+              scrollOffset: val.scrollOffset,
             );
           }
         ),
