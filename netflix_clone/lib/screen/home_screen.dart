@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _scrollController = ScrollController()
       ..addListener(
         () {
-       Provider.of<AppBarProvider>(context, listen: true).scroll(_scrollController.offset);
+       Provider.of<AppBarProvider>(context, listen: false).scroll(_scrollController.offset);
         },
       );
     super.initState();

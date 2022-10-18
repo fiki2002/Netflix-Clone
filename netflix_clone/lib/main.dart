@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Provider<AppBarProvider>(
+   return ChangeNotifierProvider<AppBarProvider>(
     create: (BuildContext context) => AppBarProvider(),
      child: MaterialApp(
       title: 'Flutter Netflix UI',
