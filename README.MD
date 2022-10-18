@@ -12,6 +12,5 @@ It is responsive across all screen and manages state well.
 
 
 ## Screenshots📷
-
-https://user-images.githubusercontent.com/85044009/196507234-52b598d0-3abc-4467-880c-ad27292b5320.mp4
+ 
 
